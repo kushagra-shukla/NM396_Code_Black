@@ -4,12 +4,8 @@ from django.http import HttpResponse
 from .models import Result, IndividualResult
 import pandas as pd
 import numpy as np
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 from .task import bulk_sentiment_analyser
-=======
-#import matplotlib.pyplot as plt
->>>>>>> f4d6940a708093a663010d26b9513dab96ac4b5d
 
 # Create your views here.
 
