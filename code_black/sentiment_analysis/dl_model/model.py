@@ -67,6 +67,6 @@ def Model():
     model = CNN(INPUT_DIM, EMBEDDING_DIM, N_FILTERS, FILTER_SIZES, OUTPUT_DIM, DROPOUT, PAD_IDX)
     #load the parameters of the model
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model.load_state_dict(torch.load('tut5-model.pt', map_location=device))
+    model.load_state_dict(torch.load('sentiment_analysis/dl_model/tut5-model.pt', map_location=device))
     
     return model

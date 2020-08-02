@@ -22,19 +22,19 @@
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
-		  <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
-			  <li class="nav-item">
-				<a class="nav-link" href="index.html">Upload a Dataset <span class="sr-only">(current)</span></a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="textanalysis.html">Analyse some text</a>
-			  </li>
-			  <li class="nav-item active">
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'sentiment_analyser' %}">Home <span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'bulk_analyser' %}">Upload multiple reviews</a>
+				  </li>
+			  <!-- <li class="nav-item active">
 				<a class="nav-link" href="#">Result of Dataset Analysis</a>
-			  </li>
+			  </li> -->
 			</ul>
-		  </div> -->
+		  </div>
 		</nav>
 		
 		<div class="sectionLight">

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from model import Model
+from .model import Model
 import spacy
 
 def predict_class(model, sentence, nlp, TEXT, LABELS, min_len = 4, device='cpu'):
@@ -19,8 +19,8 @@ def predict_class(model, sentence, nlp, TEXT, LABELS, min_len = 4, device='cpu')
 
 
 def predict(review_list):
-    TEXT = torch.load("vocab.pt")
-    LABELS = torch.load("label.pt")
+    TEXT = torch.load("sentiment_analysis/dl_model/vocab.pt")
+    LABELS = torch.load("sentiment_analysis/dl_model/label.pt")
     nlp = spacy.load('en')
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
@@ -35,8 +35,8 @@ def predict(review_list):
         sentiment.append(ans)
     return sentiment
 
-x = input("Input the string: ")
-l = []
-l.append(x)
-ans = predict(l)
-print(ans)
+# x = input("Input the string: ")
+# l = []
+# l.append(x)
+# ans = predict(l)
+# print(ans)
