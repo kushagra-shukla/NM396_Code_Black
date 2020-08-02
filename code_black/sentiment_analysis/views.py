@@ -29,6 +29,7 @@ def BulkAnalyserView(request):
             file = request.FILES['file']
             print(file)
             reviews, user_ratings = bulk_analyser_reader(file)
+            analyser_result = predict(reviews)
             return render(request, 'result.html', {})
         except:
             return HttpResponse("file format not supported")
