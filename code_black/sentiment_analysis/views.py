@@ -3,7 +3,7 @@ from .dl_model.predict import predict
 from django.http import HttpResponse
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # Create your views here.
 
