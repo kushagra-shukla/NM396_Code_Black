@@ -44,21 +44,35 @@
 					  <div class="container">
 						<h4 class="display-5">Result of sentiment analyser in the range of 1-5</h4>
 						<h5 class="display-6">Sentence provided: {{sentence}}</h5>
-						<h5 class="display-6"> Rating: </h5>
+						<h5 class="display-6"> Overall average rating: {{rating}} </h5>
+						<div class="col-sm-6 col-md-4 img-col">
+							<img class="img-right" alt="Sample Image 1" src="{% static 'graph.png' %}">
+						</div>
 
 					  </div>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="row">
-				<div class="col-sm-12 col-md-6 left-img-col">
-					<img class="img-left" alt="Sample Image 1" src="Sample_image_1.png">
-				</div>
-				<div class="col-sm-12 col-md-6 right-img-col">
+			<div class="row">
+				
+				<!-- <div class="col-sm-12 col-md-6 right-img-col">
 					<img class="img-right" alt="Sample Image 2" src="Sample_image_2.png">
-				</div>
+				</div> -->
 			</div>
-		</div> -->
+
+			<ol>
+				{% for inv_result in results %}
+				<hr>
+				<li>
+					{% for i in inv_result %}
+					{{ i }}
+					{% endfor %}
+				</li>
+				
+				{% endfor %}
+				</ol>
+			
+		</div>
 		
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
