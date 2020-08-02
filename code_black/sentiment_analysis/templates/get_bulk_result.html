@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap-grid.min.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'result_css.css' %}">
     <title>Sentiment Analysis</title>
 </head>
 <body class="bd-bg">
@@ -30,9 +30,9 @@
             <li class="nav-item">
             <a class="nav-link" href="{% url 'bulk_analyser' %}">Upload multiple reviews</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="result.html">Result of Dataset Analysis</a>
-            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'bulk_result' %}">Check bulk result</a>
+            </li>
             </ul>
         </div>
         </nav>
@@ -42,8 +42,8 @@
                 <div class="col-sm-12">
                     <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1 class="display-4">Enter a piece of text!</h1>
-                        <p class="lead">Find out what's written between the lines.</p>
+                        <h1 class="display-4">Check Analyser output!</h1>
+                    
                     </div>
                     </div>
                 </div>
