@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from sentiment_analysis.views import sentimentAnalyserView, BulkAnalyserView
+from sentiment_analysis.views import sentimentAnalyserView, BulkAnalyserView, BulkAnalyserResultView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', sentimentAnalyserView, name="sentiment_analyser"),
-    path('bulk/', BulkAnalyserView, name="bulk_analyser")
+    path('bulk/', BulkAnalyserView, name="bulk_analyser"),
+    path('bulk_result/', BulkAnalyserResultView, name="bulk_result")
 ]

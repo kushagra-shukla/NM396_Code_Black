@@ -61,12 +61,16 @@
 			</div>
 
 			<ol>
-				{% for inv_result in results %}
+				{% for inv_result in individual_review_result %}
 				<hr>
-				<li>
-					{% for i in inv_result %}
-					{{ i }}
-					{% endfor %}
+				<li>					
+					{{inv_result.user_rating}}					
+				
+					{{inv_result.review}}
+				
+					{{inv_result.analyser_result}}
+				
+					{{inv_result.average_result}}
 				</li>
 				
 				{% endfor %}

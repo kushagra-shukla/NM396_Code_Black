@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .dl_model.predict import predict
 from django.http import HttpResponse
+from .models import Result, IndividualResult
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from .task import bulk_sentiment_analyser
 
 # Create your views here.
 
@@ -27,23 +29,21 @@ def BulkAnalyserView(request):
         print("got request")
         try:
             file = request.FILES['file']
-            print(file)
-            reviews, user_ratings = bulk_analyser_reader(file)
-            analyser_result = predict(reviews)
-            return render(request, 'result.html', {})
+            result_obj = Result.objects.create(csv_file=file)
+            bulk_sentiment_analyser.delay(result_obj.id)           
+            return render(request, 'upload_success.html', {'result_id':result_obj.id})
         except:
             return HttpResponse("file format not supported")
         return HttpResponse("file not uploaded")
     return render(request, 'bulk_review_upload.html', {})
 
-def bulk_analyser_reader(file):
-    dfx= pd.read_csv(file)
-    file_values = dfx.values
-    reviews = []
-    user_ratings = []
-    for review in file_values:
-        reviews.append(review[0])
-        user_ratings.append(int(review[1]))
-    # print(reviews)
-    # print(user_ratings)
-    return reviews, user_ratings
+def BulkAnalyserResultView(request):
+    if 'result_id' in request.GET:
+        result_obj = Result.objects.get(id=request.GET.get('result_id'))
+        if(result_obj.is_ready):
+            return render(request, 'bulk_result.html', {})
+        return render(request, 'please_wait.html', {'result_id':result_obj.id})
+    return render(request,  'get_bulk_result.html', {})
+
+
+
