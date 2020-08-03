@@ -5,6 +5,6 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 
 ## Road Map
 - Build the backend and frontend services to service queries. Create a protoype ML model. :white_check_mark:
-- Enhance ML model performance and hyperperameter tuning. :yellow_square:
-- Integration of model with the web service. :white_large_square:
-- Final touches and code refactoring to bring maximum performance and to make the code more efficient and maintainable. :white_large_square:
+- Enhance ML model performance and hyperperameter tuning. :white_check_mark:
+- Integration of model with the web service. :white_check_mark:
+- Final touches and code refactoring to bring maximum performance and to make the code more efficient and maintainable. :yellow_square:
