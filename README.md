@@ -42,3 +42,44 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 ![Table Output](./sample_images/table_77k.png)
 ### Singular Review
 ![Singular Upload Functionality](./sample_images/step_singular.png)
+
+# We do things differently
+
+## We use CNN. Why?
+- Less runtime after training
+- Less weights to be trained
+- Model size is relatively small for same accuracy
+- Work on low power machines.
+
+## We use Job Queueing. How & Why?
+- Celery for an asynchronous task queue based on distributed message passing.
+- Redis as blazing fast message broker.
+- We need not to wait because somebody else uploaded a csv file with 1 lakh entries.
+
+## Result?
+- ML model with **93% accuracy**.
+- We can handle multiple requests simultaneously without choking.
+
+## Model in the Making
+![Model Metrics Jupyter Notebook Snippets](#)
+
+# It was not always at 93 %
+- We changed the training data size from **80k to 4 lakh**.
+- Introduced **learning rate decay**.
+- Switched from **100 dimension embedding to 200 dimension of GloVe** so that we have more trainable paramteres.
+- Introduced **dropout regularization**.
+- Increased embedding vocabulary size from **25k to 1 lakh**.
+> And of course hours of hard work by the team :)
+
+# Our Tech Stack
+![Tech Stack Photo](#)
+
+# Summary
+- **93 % accuracy** with ML model. Bulk reviews handled via job queueing using **Celery + Redis**.
+- Tested **77k** reviews under **600 seconds of CPU time** using ngrok.
+- Compatible with both GPU and CPU.
+- Can be easily integrated with the **BHUVAN** database.
+- Can be used via Mobile devices as well. (responsive web design)
+- API support can also be provided easily using **Django REST**.
+
+
