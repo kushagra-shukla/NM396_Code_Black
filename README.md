@@ -61,7 +61,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 - We can handle multiple requests simultaneously without choking.
 
 ## Model in the Making
-![Model Metrics Jupyter Notebook Snippets](#)
+![Model Metrics Jupyter Notebook Snippets](./sample_images/metrics_from_ppt.png)
 
 # It was not always at 93 %
 - We changed the training data size from **80k to 4 lakh**.
@@ -72,7 +72,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 > And of course hours of hard work by the team :)
 
 # Our Tech Stack
-![Tech Stack Photo](#)
+![Tech Stack Photo](./sample_images/tech_stack.png)
 
 # Summary
 - **93 % accuracy** with ML model. Bulk reviews handled via job queueing using **Celery + Redis**.
