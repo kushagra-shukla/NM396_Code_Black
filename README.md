@@ -9,17 +9,17 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 - Integration of model with the web service. :white_check_mark:
 - Final touches and code refactoring to bring maximum performance and to make the code more efficient and maintainable. :white_check_mark:
 
-## How Run locally:
+## How To Run Locally:
 
-**Step-1:** Clone the repo to your system.
+**Step-1** Clone the repo to your system.
 
-**Step-2:** Download and install a PostgreSQL database, for ubuntu/debian users https://www.youtube.com/watch?v=M4RDizdaO9U  
+**Step-2** Download and install a PostgreSQL database, for ubuntu/debian users https://www.youtube.com/watch?v=M4RDizdaO9U  
 
-**Step-3:** Create new user and database in Postgres.
+**Step-3** Create new user and database in Postgres.
 
-**Step-4:** Change the database creads in `code_black/settings.py`
+**Step-4** Change the database creads in `code_black/settings.py`
 
-**Step-5:** Run command: `pip install -r <path to file>/requirements.txt`
+**Step-5** Run command: `pip install -r <path to file>/requirements.txt`
 
 **Step-6** Run command: `python manage.py migrate`
 
