@@ -52,13 +52,13 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 - Work on low power machines.
 
 ## We use Job Queueing. How & Why?
-- Celery for an asynchronous task queue based on distributed message passing.
-- Redis as blazing fast message broker.
-- We need not to wait because somebody else uploaded a csv file with 1 lakh entries.
+- Celery for an **asynchronous task queue** based on distributed message passing.
+- Redis as blazing fast **message broker**.
+- We **need not wait** because somebody else uploaded a csv file with **1 lakh entries**.
 
 ## Result?
 - ML model with **93% accuracy**.
-- We can handle multiple requests simultaneously without choking.
+- We can handle **multiple requests simultaneously** without choking.
 
 ## Model in the Making
 ![Model Metrics Jupyter Notebook Snippets](./sample_images/metrics_from_ppt.png)
