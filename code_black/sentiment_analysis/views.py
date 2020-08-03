@@ -15,21 +15,17 @@ from .task import bulk_sentiment_analyser
 def sentimentAnalyserView(request):
     if request.method  == 'POST':
         sentences = []
-        sentences.append(request.POST.get('sentence'))
+        sentences.append(request.POST.get('sentence')[0:250])
         rating = predict(sentences)
-        results = [
-            ["I really like the Bhuvan portal.", "User rating 5", "Average rating 4"],
-            ["Detailing of India's 2D map are great but its Zoom feature can be improved.", "User rating 3.5", "Average rating 3"],
-            ["I am unable to login my account on bhuvan", "User rating 1", "Average rating 1"],
-            ["Another great portal by goverment of India and ISRO", "User rating 3.5", "Average rating 4"]
-        ]
-        return render(request, 'result.html', {'sentence': sentences[0], 'rating': rating, 'results': results})
+        emoji = f'/static/emojis/rating_{rating[0]}/'
+        print(emoji)
+        return render(request, 'result.html', {'sentence': sentences[0], 'rating': rating, 'emojie': emoji})
     return render(request, 'home.html', {})
 
 
 def BulkAnalyserView(request):
     if request.method == 'POST':
-        print("got request")
+        # print("got request")
         try:
             file = request.FILES['file']
             result_obj = Result.objects.create(csv_file=file)
@@ -45,17 +41,19 @@ def BulkAnalyserResultView(request):
         result_obj = Result.objects.get(id=request.GET.get('result_id'))
         if(result_obj.is_ready):
             individual_results = IndividualResult.objects.filter(overall_result=result_obj)
+            reviews_count = individual_results.count()
             analyser_results = list(individual_results.values_list('analyser_result', flat=True))
             average_results = list(individual_results.values_list('average_result', flat=True))
             analyser_graph = BarPlot(analyser_results)
             average_gaph = BarPlot(average_results)
             result_dic = {
-                'overall_average_rating': result_obj.overall_average_result,
-                'overall_user_rating': result_obj.overall_user_rating,
-                'overall_analyser_rating': result_obj.overall_analyser_result,
+                'overall_average_rating': round(result_obj.overall_average_result, 2),
+                'overall_user_rating': round(result_obj.overall_user_rating, 2),
+                'overall_analyser_rating': round(result_obj.overall_analyser_result, 2),
                 'individual_result': individual_results,
                 'analyser_graph': analyser_graph,
-                'average_graph': average_gaph
+                'average_graph': average_gaph,
+                'reviews_count': reviews_count
             }
             return render(request, 'bulk_result.html', result_dic)
         return render(request, 'please_wait.html', {'result_id':result_obj.id})

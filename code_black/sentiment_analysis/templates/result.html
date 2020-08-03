@@ -35,7 +35,7 @@
 						<a class="nav-link" href="{% url 'bulk_analyser' %}">Upload multiple reviews</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'bulk_result %}">check bulk result</a>
+						<a class="nav-link" href="{% url 'bulk_result' %}">check bulk result</a>
 					</li>
 				</ul>
 			</div>
@@ -47,97 +47,26 @@
 					<div class="jumbotron jumbotron-fluid">
 						<div class="container">
 							<h4 class="display-5">Result of sentiment analyser in the range of 1-5</h4>
+							<br>
+							<br>
 							<h5 class="display-6">Sentence provided: {{sentence}}</h5>
+							<br>
 							<h5 class="display-6"> Overall average rating: {{rating}} </h5>
 							<br /><br />
-							<div class="row mx-auto">
-								<div class="col-sm-6 col-md-4 img-col mx-auto">
-									<img class="img-left" alt="Sample Image 1" src="{% static 'graph.png' %}">
-								</div>
-								<div class="col-sm-6 col-md-4 img-col mx-auto">
+							<!-- <div class="row mx-auto"> -->
+								<!-- <div class="col-sm-6 col-md-4 img-col mx-auto">
+									{% if rating == 4  %}
+									<img  alt="Sample Image 1" src="{% static 'emojis/rating_4.png' %}" style="width: 100px; height: 100px;">
+									{% endif %}
+								</div> -->
+								<!-- <div class="col-sm-6 col-md-4 img-col mx-auto">
 									<img class="img-right" alt="Sample Image 2" src="{% static '#.png' %}">
-								</div>
-							</div>
+								</div> -->
+							<!-- </div> -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-
-				<!-- <div class="col-sm-12 col-md-6 right-img-col">
-					<img class="img-right" alt="Sample Image 2" src="Sample_image_2.png">
-				</div> -->
-			</div>
-
-			<div class="container">
-				<!--table-->
-				<table class="table table-striped">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">Rating by Customer</th>
-							<th scope="col">Customer Review</th>
-							<th scope="col">ML Model Rating</th>
-							<th scope="col">Avg. Product Rating</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">3</th>
-							<td>Rtx2080 with Intel i9 processor and on top of that 144hz display panel.
-								Only down side with this machine is it's speakers and design. Apart from
-								that, on performance it's a beast. I would totally recommend it if you
-								are not into aesthetics that much.</td>
-							<td>4</td>
-							<td>3.5</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>This laptop has loud fan noise and gets so hot that you can fry an egg over it.</td>
-							<td>2</td>
-							<td>1.5</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>This laptop is so good that I would never recommend it to a friend.</td>
-							<td>1</td>
-							<td>1</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<!-- Paginator -->
-			<div class="container">
-				<nav aria-label="...">
-					<ul class="pagination">
-						<li class="page-item">
-							<span class="page-link">Previous</span>
-						</li>
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<ol>
-				{% for inv_result in individual_review_result %}
-				<hr>
-				<li>					
-					{{inv_result.user_rating}}					
-				
-					{{inv_result.review}}
-				
-					{{inv_result.analyser_result}}
-				
-					{{inv_result.average_result}}
-				</li>
-
-				{% endfor %}
-			</ol>
-
 		</div>
 
 	</div>

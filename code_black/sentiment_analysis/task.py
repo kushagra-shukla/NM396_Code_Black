@@ -37,8 +37,8 @@ def bulk_analyser_reader(file):
     reviews = []
     user_ratings = []
     for review in file_values:
-        reviews.append(review[0])
+        reviews.append(str(review[0]))
         user_ratings.append(int(review[1]))
-    print(reviews)
-    print(user_ratings)
+    # print(reviews)
+    # print(user_ratings)
     return reviews, user_ratings

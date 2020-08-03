@@ -49,16 +49,19 @@
 							<h4 class="display-5">Result of sentiment analyser in the range of 1-5</h4>
                             <h5 class="display-6"> Overall average rating: {{overall_average_rating}} </h5>
                             <h5 class="display-6"> Overall ML model rating: {{overall_analyser_rating}} </h5>
-                            <h5 class="display-6"> Overall user rating: {{overall_user_rating}} </h5>
+							<h5 class="display-6"> Overall user rating: {{overall_user_rating}} </h5>
+							<h5 class="display-6"> Total number of reviews: {{reviews_count}} </h5>
 							<br /><br />
 							<div class="row mx-auto">
 								<div class="col-sm-6 col-md-4 img-col mx-auto">
                                     <!-- <img class="img-left" alt="Sample Image 1" src="{{analyser_graph}}"> -->
-                                    <img src="data:image/png;base64,{{analyser_graph}}"  class="img-left">
+									<img src="data:image/png;base64,{{analyser_graph}}"  class="img-left">
+									Analyser Result
 								</div>
 								<div class="col-sm-6 col-md-4 img-col mx-auto">
                                     <!-- <img class="img-right" alt="Sample Image 2" src="{% static '#.png' %}"> -->
-                                    <img src="data:image/png;base64,{{average_graph}}"  class="img-left">
+									<img src="data:image/png;base64,{{average_graph}}"  class="img-left">
+									Average Result (User Rating + Analyser Ratings)
 								</div>
 							</div>
 						</div>
