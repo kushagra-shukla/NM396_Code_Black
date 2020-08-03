@@ -39,7 +39,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 ## Stepwise Functionality
 ### Bulk Upload 
 ![Bulk Upload Functionality](./sample_images/step_bulk.png)
-![Table Output](./sample_images/table_77k.png)
+![Table Output](./sample_images/table_77k_cropped.png)
 ### Singular Review
 ![Singular Upload Functionality](./sample_images/step_singular.png)
 
