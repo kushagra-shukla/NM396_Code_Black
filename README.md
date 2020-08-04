@@ -15,9 +15,9 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 
 **Step-2** Download and install a PostgreSQL database, for ubuntu/debian users https://www.youtube.com/watch?v=M4RDizdaO9U  
 
-**Step-3** Create new user and database in Postgres.
+**Step-3** Create new user and database in Postgres. 
 
-**Step-4** Change the database creads in `code_black/settings.py`
+**Step-4** Change the database credentials in `code_black/settings.py` with the ones you created in Step-3. 
 
 **Step-5** Run command: `pip install -r <path to file>/requirements.txt`
 
@@ -29,7 +29,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 
 **Step-9** Download and install Redis, https://redis.io/topics/quickstart.
 
-**Step-10** Run command `cd code_black`
+**Step-10** Make sure you in the directory `$<path to clone>/NM396_Code_Black/code_black/` before you run command in next step.
 
 **Step-11** Run command: `celery -A code_black worker -l info`
 
@@ -61,7 +61,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 - We can handle **multiple requests simultaneously** without choking.
 
 ## Model in the Making
-![Model Metrics Jupyter Notebook Snippets](./sample_images/metrics_from_ppt.png)
+![Model Metrics Jupyter Notebook Snippets](./sample_images/metrics_from_ppt_cropped.png)
 
 # It was not always at 93 %
 - We changed the training data size from **80k to 4 lakh**.
