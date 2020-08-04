@@ -29,7 +29,7 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 
 **Step-9** Download and install Redis, https://redis.io/topics/quickstart.
 
-**Step-10** Make sure you in the directory `$<path to clone>/NM396_Code_Black/code_black/` before you run command in next step.
+**Step-10** Make sure you are in the directory `$<path to clone>/NM396_Code_Black/code_black/` before you run command in next step.
 
 **Step-11** Run command: `celery -A code_black worker -l info`
 
