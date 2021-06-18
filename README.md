@@ -13,6 +13,10 @@ Our aim for this project is to make a ML model to assist in __senitment classifi
 
 **Step-2** Download and install a PostgreSQL database, for ubuntu/debian users https://www.youtube.com/watch?v=M4RDizdaO9U  
 
+OR 
+
+if you have it installed already just start the Postgres server by running `sudo service postgresql start`
+
 **Step-3** Create new user and database in Postgres. 
 
 **Step-4** Change the database credentials in `code_black/settings.py` with the ones you created in Step-3. 
