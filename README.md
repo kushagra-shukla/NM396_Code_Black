@@ -31,6 +31,10 @@ if you have it installed already just start the Postgres server by running `sudo
 
 **Step-9** Download and install Redis, https://redis.io/topics/quickstart.
 
+OR
+
+if you have it installed already just start redis server by running `redis-server`.
+
 **Step-10** Make sure you are in the directory `$<path to clone>/NM396_Code_Black/code_black/` before you run command in next step.
 
 **Step-11** Run command: `celery -A code_black worker -l info`
