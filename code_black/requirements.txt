@@ -4,7 +4,7 @@ asgiref==3.2.10
 billiard==3.6.3.0
 blis==0.4.1
 catalogue==1.0.0
-celery==4.3.0
+celery==5.2.2
 certifi==2020.6.20
 chardet==3.0.4
 cycler==0.10.0
